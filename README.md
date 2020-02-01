@@ -1,4 +1,4 @@
-# phabview README
+# phabview
 
 Generates a Phabricator Diffusion path of current file and copies to clipboard.
 
@@ -16,6 +16,10 @@ This extension contributes the following settings:
 ### 1.0.0
 
 First Release ! Converts path of current file to a Phabricator Diffusion Path
+
+### Contribute !
+
+Repo - https://github.com/zeppez101/phabview
 
 -----------------------------------------------------------------------------------------------------------
 

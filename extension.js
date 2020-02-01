@@ -1,8 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
-const resource = vscode.workspace.getConfiguration('phabview').get("basePath")
-const baseDir = vscode.workspace.getConfiguration('phabview').get("baseDir")
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 
@@ -14,6 +12,9 @@ const getURI = (repoName, path) => {
 const parse = (file) => {
 
 	try {
+		const baseDir = vscode.workspace.getConfiguration('phabview').get("baseDir")
+		const resource = vscode.workspace.getConfiguration('phabview').get("basePath")
+
 		const path =  file.split(baseDir)[1].split('/').filter(Boolean)
 
 		const repoName = path[0]
@@ -42,9 +43,7 @@ const pbcopy = (data) => {
 const copy = () => {
 
 	try {
-		const fi =  vscode.window.activeTextEditor.document.fileName
-		console.log(fi)
-		const filePath = fi
+		const filePath =  vscode.window.activeTextEditor.document.fileName
 		pbcopy(parse(filePath))
 		vscode.window.showInformationMessage('Phabricator String Copied to Clipboard !');
 	}catch(e){

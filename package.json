@@ -4,6 +4,10 @@
 	"description": "Opens current file in phabricator",
 	"publisher": "PranaySingh",
 	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zeppez101/phabview.git"
+	},
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -24,7 +28,7 @@
 			"properties": {
 			  "phabview.basePath": {
 				"type": "string",
-				"default": "https://phabriactor.com/",
+				"default": "https://phabricator.com/",
 				"description": "Link to Phabricator instance"
 			  },
 			  "phabview.baseDir": {
